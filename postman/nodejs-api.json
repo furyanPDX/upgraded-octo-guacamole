@@ -1,0 +1,127 @@
+{
+  "variables": [],
+  "info": {
+    "name": "nodejs-api",
+    "_postman_id": "7735862d-425c-e66b-f73d-264aff31d51a",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "72253d13-a6e2-156b-577c-3afb8eee3ad4",
+      "name": "Get Users",
+      "request": {
+        "url": "localhost:3000/api/v1/users/",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": "Gets all Users"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "54406b05-4cdd-9baf-61a7-18b406b38c85",
+      "name": "Get User",
+      "request": {
+        "url": "localhost:3000/api/v1/users/5997ddafcc93ba60fc10cae8",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": "Gets a User by id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "cabaf78f-bf35-2e27-5914-3b034ce9f5df",
+      "name": "Delete User",
+      "request": {
+        "url": "localhost:3000/api/v1/users/5997e0c3f33ad06020d4424a",
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "description": "Deletes a User by id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c0740e2d-a587-8f1e-ed27-b58a2c174679",
+      "name": "Update User",
+      "request": {
+        "url": "localhost:3000/api/v1/users/5997ddafcc93ba60fc10cae8",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "FuryanPDX_updated",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "countjoshington@gmail.com",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password123",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "description": "Updates user by id"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "d24a4933-5699-f601-a5c3-67f0b8a61f01",
+      "name": "Create User",
+      "request": {
+        "url": "localhost:3000/api/v1/users",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "KungRaseri",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "homer@joshuahomer.ninja",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password123",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "description": "Creates a User"
+      },
+      "response": []
+    }
+  ]
+}
