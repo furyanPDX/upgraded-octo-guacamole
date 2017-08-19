@@ -1,0 +1,30 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "portfolio-nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furyanPDX/upgraded-octo-guacamole.git"
+  },
+  "keywords": [
+    "nodejs",
+    "reactjs",
+    "vuejs",
+    "dotnetcore"
+  ],
+  "author": "FuryanPDX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/furyanPDX/upgraded-octo-guacamole/issues"
+  },
+  "homepage": "https://github.com/furyanPDX/upgraded-octo-guacamole#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  }
+}
