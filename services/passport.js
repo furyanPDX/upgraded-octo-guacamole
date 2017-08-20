@@ -6,16 +6,37 @@ const settings = require('../config/settings');
 
 const User = mongoose.model('users');
 
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    User.findById(id)
+        .then(user => {
+            done(null, user);
+        });
+});
+
 passport.use(new GoogleStrategy({
     clientID: settings.googleClientID,
     clientSecret: settings.googleClientSecret,
     callbackURL: '/auth/google/callback'
-}, (accessToken, refreshToken, profile, cb) => {
-    new User({
-        googleId: profile.id,
-        name: 'Test',
-        email: 'test'
-    }).save();
+}, (accessToken, refreshToken, profile, done) => {
+    User.findOne({
+        googleId: profile.id
+    }).then((existingUser) => {
+        if (existingUser) {
+            done(null, existingUser);
+        } else {
+            new User({
+                    googleId: profile.id,
+                    name: 'Test',
+                    email: 'test'
+                }).save()
+                .then(user => done(null, user));
+        }
+    });
+
 }));
 
 // passport.use(new TwitchStrategy());

@@ -1,8 +1,16 @@
-// var express = require('express');
-// var router = express.Router();
-// var bodyParser = require('body-parser');
-// router.use(bodyParser.urlencoded({
-//     extended: true
-// }));
+const passport = require('passport');
+module.exports = (app) => {
+    app.get('/auth/google',
+        passport.authenticate('google', {
+            scope: ['profile', 'email']
+        }));
 
-// module.exports = router;
+    app.get('/auth/google/callback', passport.authenticate('google', (err, user) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(user);
+    }), (req, res) => {
+        console.log(res.code);
+    });
+};
