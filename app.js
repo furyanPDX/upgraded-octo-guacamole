@@ -19,6 +19,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./api/controllers/UserController')(app);
 require('./api/controllers/AuthController')(app);
+require('./api/controllers/HomeController')(app);
+require('./api/controllers/UserController')(app);
 module.exports = app;

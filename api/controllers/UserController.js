@@ -5,10 +5,6 @@ const apiUrl = settings.apiUrl + '/users';
 const User = mongoose.model('users');
 
 module.exports = (app) => {
-    app.get('/', (req, res) => {
-        res.status(200).send("hello");
-    });
-
     app.post(`${apiUrl}/`, (req, res) => {
         User.create({
             name: req.body.name,
