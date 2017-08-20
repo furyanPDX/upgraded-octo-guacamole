@@ -7,12 +7,12 @@ router.use(bodyParser.urlencoded({
 
 var User = require('../../models/User');
 
-router.post('/', function (req, res) {
+router.post('/', (req, res) => {
     User.create({
         name: req.body.name,
         email: req.body.email,
         password: req.body.password
-    }, function (err, user) {
+    }, (err, user) => {
         if (err) {
             return res.status(500).send("HTTP/500: Create User");
         }
@@ -21,8 +21,8 @@ router.post('/', function (req, res) {
     });
 });
 
-router.get('/', function (req, res) {
-    User.find({}, function (err, users) {
+router.get('/', (req, res) => {
+    User.find({}, (err, users) => {
         if (err) {
             return res.status(500).send("HTTP/500: Get Users");
         }
@@ -30,8 +30,8 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/:id', function (req, res) {
-    User.findById(req.params.id, function (err, user) {
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id, (err, user) => {
         if (err) {
             return res.status(500).send("HTTP/500: Get User");
         }
@@ -42,11 +42,11 @@ router.get('/:id', function (req, res) {
     });
 });
 
-router.put('/:id', function (req, res) {
+router.put('/:id', (req, res) => {
 
     User.findByIdAndUpdate(req.params.id, req.body, {
         new: true
-    }, function (err, user) {
+    }, (err, user) => {
         if (err) {
             return res.status(500).send("HTTP/500: Update User");
         }
@@ -54,8 +54,8 @@ router.put('/:id', function (req, res) {
     });
 });
 
-router.delete('/:id', function (req, res) {
-    User.findByIdAndRemove(req.params.id, function (err, user) {
+router.delete('/:id', (req, res) => {
+    User.findByIdAndRemove(req.params.id, (err, user) => {
         if (err) {
             return res.status(500).send("HTTP/500: Delete User");
         }
