@@ -1,0 +1,41 @@
+{
+  "name": "upgraded-octo-guacamole",
+  "scripts": {
+  },
+  "env": {
+    "API_URL": {
+      "required": true
+    },
+    "COOKIE_KEY": {
+      "generator": "secret"
+    },
+    "GOOGLE_CLIENT_ID": {
+      "required": true
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "required": true
+    },
+    "MONGO_DB_URI": {
+      "required": true
+    },
+    "RAVEN_URL": {
+      "required": true
+    },
+    "TWITCH_CLIENT_ID": {
+      "required": true
+    },
+    "TWITCH_CLIENT_SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
