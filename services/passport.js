@@ -1,11 +1,11 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const TwitchStrategy = require('passport-twitch').Strategy;
-const keys = require('../config/keys');
+const settings = require('../config/settings');
 
 passport.use(new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
+    clientID: settings.googleClientID,
+    clientSecret: settings.googleClientSecret,
     callbackURL: '/auth/google/callback'
 }, (accessToken, refreshToken, profile, cb) => {
     console.log('accessToken: ', accessToken);

@@ -1,2 +1,4 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://172.22.28.204:27017/portfolio')
+const mongoose = require('mongoose');
+const settings = require('./config/settings');
+
+mongoose.connect(settings.mongodbUri)
